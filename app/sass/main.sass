@@ -1,0 +1,243 @@
+@import 'sass_settings.sass'
+body
+  background-image: url(../images/background.jpg)
+  background-size: cover
+.main
+  padding-top: 20px
+  min-height: 600px
+header
+  padding: 15px 15px
+  background: linear-gradient(to bottom, #fff 0%,#f5f5f5 47%,#ebebeb 100%)
+  box-shadow: 0 2px 1px 0 #ccc
+.hidden
+  display: none
+  .container
+    width: 600px
+.button_wrap
+  text-align: center
+.arrow_wrap
+  text-align: center
+  i::before
+    cursor: pointer
+    display: block
+    margin-bottom: 5px
+    border-radius: 50%
+    padding: 10px
+    border: 1px solid #00B4E8
+.categories
+  text-align: center
+  display: none
+  text-transform: uppercase
+
+  ul
+    list-style-type: none
+    margin: 0
+    padding: 0
+    li
+      display: inline-block
+      cursor: pointer
+      padding: 5px 25px
+      font-size: 16px
+      font-weight: bold
+      &:hover
+        text-decoration: underline
+form
+  h4
+    text-align: center
+  span
+    display: block
+    font-size: 12px
+    color: #f00
+    margin-bottom: 10px
+.item
+  img
+    width: 100%
+    cursor: pointer
+.advert
+  min-height: 255px
+  border-radius: 15px
+  border: 1px solid #8CACC5
+  background-color: #f8f8f8
+  text-align: center
+  margin-right: 40px
+  margin-bottom: 20px
+  position: relative
+  padding-bottom: 10px
+  .top_line
+    background-color: $main-color
+    position: relative
+    height: 70px
+    border-radius: 15px 15px 0 0
+    i
+      position: absolute
+      right: 0
+      margin-right: 10px
+      margin-top: 10px
+      font-size: 15px
+      color: #fff
+      cursor: pointer
+      display: block
+      &:hover
+        color: #ccc
+    span.date
+      font-size: 10px
+      color: #ffffff
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      padding: 5px
+      background-color: $main-color
+      border-radius: 15px
+    h4
+      font-size: 16px
+      color: #fff
+      margin: 0
+      padding-top: 30px
+  .content
+    padding: 0 10px
+    position: relative
+    height: 185px
+    .description
+      text-align: justify
+      font-size: 13px
+      word-wrap: break-word
+      height: 125px
+      overflow: hidden
+      margin-bottom: 5px
+    strong
+      text-align: left
+      display: block
+      margin-bottom: 10px
+    .user_block
+      text-align: right
+      position: absolute
+      bottom: 0
+      right: 0
+      margin-right: 10px
+      margin-top: 5px
+      a.visitors
+        text-decoration: none
+        color: #ffffff
+        background-color: $main-color
+        padding: 5px
+        display: inline-block
+        cursor: default
+        border-radius: 5px
+        vertical-align: middle
+      .button_wrap
+        display: inline-block
+    span.time
+      font-size: 11px
+      color: #8F8F8F
+      display: block
+      position: absolute
+      bottom: 0
+      left: 0
+      margin-left: 10px
+#create
+  input, textarea,select
+    margin-bottom: 15px
+.edit_advert
+  .ad
+    border: 1px solid #ccc
+    height: 80px
+    color: #ccc
+    margin-top: 30px
+    border-radius: 5px
+    background: linear-gradient(to bottom, #fff 0%,#f5f5f5 47%,#ebebeb 100%)
+    cursor: pointer
+    position: relative
+    i
+      font-size: 30px
+      color: #00B4E8
+      line-height: 60px
+      margin: 0 15px
+    .time
+      color: #999
+      font-size: 10px
+      position: absolute
+      right: 0
+      bottom: 0
+      margin-right: 10px
+      margin-bottom: 5px
+    .categor
+      color: #999
+      font-size: 12px
+      position: absolute
+      left: 0
+      bottom: 0
+      margin-left: 77px
+      margin-bottom: 5px
+    .title
+      input
+        width: 100%
+        margin-top: 15px
+        border: none
+        outline: none
+        background: transparent
+        color: #000
+        height: 30px
+        font-size: 20px
+  .contents
+    min-height: 200px
+    display: none
+    padding: 10px
+    border-radius: 3px
+    border-right: 1px solid #ccc
+    border-left: 1px solid #ccc
+    border-bottom: 1px solid #ccc
+    box-shadow: 0 1px 0 1px #ccc
+    position: relative
+    .author
+      font-size: 13px
+      position: absolute
+      right: 0
+      bottom: 0
+      margin-right: 10px
+      margin-top: 10px
+      display: block
+    textarea
+      width: 100%
+      border: none
+      outline: none
+      resize: none
+    .images
+      margin-bottom: 20px
+      img
+        width: auto
+        height: 150px
+.pages 
+  list-style-type: none
+  display: block
+.pages 
+  li
+    display: inline-block
+    padding: 8px 15px
+    background-color: $main-color
+    color: #fff
+    cursor: pointer
+    border-radius: 50%
+    border: 1px solid #fff
+    font-weight: bold
+    font-size: 20px
+    &.active
+      background-color: #d9534f
+.masonry-container
+  padding: 0
+.grid-sizer
+  width: 25%
+  float: left
+  min-height: 1px
+.item
+  padding: 0
+  cursor: pointer
+.item img
+  width: 100%
+
+
+
+
+
+
+

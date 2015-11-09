@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/js/main.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/components/router.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/controllers/AdvertController.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/log.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/models/Advert.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/models/User.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/404.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/advert/index.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/advert/item.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/advert/profile_advert.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/layouts/header.php" charset="UTF-8" />
+  </component>
+</project>
