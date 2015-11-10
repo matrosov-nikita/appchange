@@ -50,13 +50,14 @@ class Router {
 				if ($result!=null)
 				{
 
-					return json_encode($result);
+					if ($result=="end") return "";
+					if ($result) return json_encode($result);
 				}
 				break;
 			}
 		}
 
-		return include_once('/views/404.php');
+		 include_once(ROOT.'/views/404.php');
 	}
 
 }

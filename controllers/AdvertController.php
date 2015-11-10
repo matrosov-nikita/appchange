@@ -11,12 +11,11 @@ class AdvertController {
     }
 
     public static function actionGet($count) {
-        file_put_contents('log.txt',"COUNT....................BEGIN_COUNT".$count."END_COUNT",FILE_APPEND);
         $adverts = array();
         $adverts = Advert::getAllAdverts($count);
         $itemHTML = include_once(ROOT.'/views/advert/index.php');
         $dateBack = (string)$itemHTML;
-        return $itemHTML;
+        return "end";
     }
 
     public static function actionUpdate() {
@@ -32,7 +31,7 @@ class AdvertController {
         $my_adverts = array();
         $my_adverts = Advert::getAdvertsByLogin();
         require_once(ROOT.'/views/advert/profile_advert.php');
-        return true;
+        return "end";
     }
 
     public static function  actionDetails() {

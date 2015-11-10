@@ -9,8 +9,8 @@
                             ?>
     </span>
             <h4><?
-                  if (strlen($item['header'])>40):
-                      echo substr($item['header'],0,40)."...";
+                  if (strlen($item['header'])>30):
+                      echo substr($item['header'],0,30)."...";
                   else:
                       echo  $item['header'];
                   endif;
@@ -18,7 +18,7 @@
                </h4>
         </div>
         <div class='content'>
-            <div class='description'><?echo $item['description'];?></div>
+            <div class='description'><?php echo nl2br($item['description']);?></div>
             <strong>Категория: <?echo Category::getCategoryById($item['category']);?>
             </strong>
                         <span class='time'>
@@ -55,7 +55,7 @@
                     <div class="set_images">
                         <div class="container" style="width: 600px">
                             <div class="row">
-                                <div class='col-md-12 masonry-container '>
+                                <div class='col-md-12 '>
                                     <?php foreach (Advert::getAllImagesByID($item['id']) as $image) :?>
                                         <?php
                                         echo "<div href='".$image['image']."' target='_blank' class='col-md-4 col-sm-4 col-xs-6 item fancybox'>
@@ -67,7 +67,8 @@
                     </div>
 
                     <span> Автор: <?php echo User::getLoginById($item['author']);?> </span>
-                    <p><?echo $item['description'];?></p>
+                    <span> Email: <?php echo User::getEmailById($item['author']);?> </span>
+                    <p><?echo nl2br($item['description']);?></p>
                 </div>
             </div>
         </div>

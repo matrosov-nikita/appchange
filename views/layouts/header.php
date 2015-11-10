@@ -11,8 +11,8 @@ $list = Category::getListCategories();
     <link rel="stylesheet" href="/app/libs/font-awesome/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="/app/css/fonts.css"/>
     <link rel="stylesheet" href="/app/libs/fancybox/source/jquery.fancybox.css"/>
-    <link rel="stylesheet" href="/app/libs/alertify/alertify.core.css">
-    <link rel="stylesheet" href="/app/libs/alertify/alertify.default.css">
+    <link rel="stylesheet" href="/app/libs/alertify/alertify.min.css">
+    <link rel="stylesheet" href="/app/libs/alertify/default.min.css">
     <link rel="stylesheet" href="/app/libs/magnific/magnific-popup.css">
     <link rel="stylesheet" href="/app/libs/owl-carousel/owl-carousel/owl.carousel.css">
     <link rel="stylesheet" href="/app/libs/owl-carousel/owl-carousel/owl.theme.css">
@@ -28,7 +28,8 @@ $list = Category::getListCategories();
                     <span> <?php echo $_COOKIE['login'];?> </span>
                     </p>
                     </div>
-                    <div class="col-md-5 col-md-push-4">
+                    <div class="col-md-6 col-md-push-3">
+                        <a  href='/get/1' class="btn btn-default"> Главная </a>
                         <a  href='/profile' class="btn btn-default profile"> Ваш профиль </a>
                         <a href="#create" class="btn btn-danger fancybox">Создать объявление</a>
                         <a href="/logout" class="btn btn-default fancybox">Выход</a>
@@ -102,10 +103,8 @@ $list = Category::getListCategories();
 <script src="/app/libs/fancybox/source/jquery.fancybox.js"></script>
 <script src="/app/libs/fancybox/source/jquery.fancybox.pack.js"></script>
 <script src="/app/js/main.js"></script>
-<script src="/app/libs/alertify/alertify.js"></script>
+<script src="/app/libs/alertify/alertify.min.js"></script>
     <script src="/app/libs/magnific/jquery.magnific-popup.min.js"></script>
     <script src="/app/libs/owl-carousel/owl-carousel/owl.carousel.min.js"></script>
-    <script src="/app/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/app/libs/imagesloaded/imagesloaded.pkgd.min.js"></script>
 </body>
 </html>

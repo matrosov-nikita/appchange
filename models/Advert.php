@@ -170,13 +170,14 @@ class Advert
 
     public static function watchDetails() {
         $db = $GLOBALS['Db']::getConnection();
+        $dataBack=array();
         if (isset($_POST))
         {
             $id = $_POST['id'];
             $stmt = $db->prepare("update adverts set watches = watches + 1 where id=:id");
             $stmt->execute(array('id' => $id));
-
-            return true;
+            $dataBack['success'] = true;
+            return $dataBack;
         }
     }
 

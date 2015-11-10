@@ -14,7 +14,6 @@ class User {
 			$stmt->execute(array('login'=>$login));
 			$data = $stmt->fetch(PDO::FETCH_LAZY);
 			return $data['id'];
-
 	}
 	public static function getLoginById($id) {
 		$db = $GLOBALS['Db']::getConnection();
@@ -23,6 +22,14 @@ class User {
 		$data = $stmt->fetch(PDO::FETCH_LAZY);
 		return $data['login'];
 	}
+	public static function getEmailById($id) {
+		$db = $GLOBALS['Db']::getConnection();
+		$stmt = $db->prepare("SELECT email FROM users where id= :id");
+		$stmt->execute(array('id'=>$id));
+		$data = $stmt->fetch(PDO::FETCH_LAZY);
+		return $data['email'];
+	}
+
 	public static function checkUser() {
 		$db = $GLOBALS['Db']::getConnection();
 		if (isset($_COOKIE['login']))

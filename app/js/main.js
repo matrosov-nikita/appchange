@@ -3,19 +3,17 @@
 
     $(document).ready(function() {
 
-
-             $.ajax({
-                type:'get',
+        function getCountPages() {
+            $.ajax({
+                type: 'get',
                 url: '/count'
-            }).done(function(data) {
+            }).done(function (data) {
                 count = parseInt(data);
-                if (count>1) {
+                if (count > 1) {
                     var array = window.location.href.split("/");
-                    var num = array[array.length-1];
-                    for (var i = 1; i <= count; i++)
-                    {
-                        if (i==num)
-                        {
+                    var num = array[array.length - 1];
+                    for (var i = 1; i <= count; i++) {
+                        if (i == num) {
                             $(".pages").append("<li class='active'>" + i.toString() + "</li>");
                         }
                         else {
@@ -24,15 +22,8 @@
                     }
                 }
             });
-
-        var $container = $(".masonry-container");
-        $container.imagesLoaded(function () {
-            $container.masonry({
-                columnWidth: ".item",
-                itemSelector: ".item"
-            });
-        });
-
+        }
+        getCountPages();
         $('ul.pages').on('click', 'li', function() {
             window.location = "/get/"+ $(this).html();
 
@@ -74,6 +65,8 @@
             overlay: {closeClick: false}
         },
         beforeLoad: function () {
+
+            console.log("beforeLoad");
             if (open==false) {
                 var self = $(this.element).parent().parent();
                 $.ajax({
@@ -81,12 +74,13 @@
                     url: '/details',
                     data: {id: self.children("input").attr("value")}
                 }).done(function (data) {
-                    if (data == "true") {
-                        console.log("true");
+                    dataParsed = JSON.parse(data);
+                    if (dataParsed.success) {
+                        console.log("sdasd");
                         var a = self.children("a").children("span");
                         a.html(parseInt(a.html()) + 1);
                     }
-                });
+                })
             }
         },
         beforeClose: function() {
@@ -109,7 +103,7 @@
                 data = JSON.parse(data);
                 $("#register .login_errors ,#register .pass_errors, #register .email_errors").html("");
                 if (!data.success) {
-                    alertify.error("Обнаружены ошибки");
+                    alertify.notify("Обнаружены ошибки",'error');
                     if (data.errors.login!=null)
                     {
                         $("#register .login_errors").html(data.errors.login);
@@ -125,10 +119,12 @@
                     }
                 }
                 else {
-                    alertify.success(data.message);
+
                     $("#register").trigger("reset");
                     $.fancybox.close();
-                    window.location = "/get/1";
+                    alertify.notify("Регистрация прошла успешно",'success');
+                    setTimeout(function(){location.href="/get/1"} , 1000);
+
                 }   
             }).fail(function(jqXHR, textStatus, error) {
                console.log("fail");
@@ -154,7 +150,7 @@
                     alertify.success("Аторизация прошла успешно");
                     $("#enter").trigger("reset");
                     $.fancybox.close();
-                    window.location = "/get/1";
+                    setTimeout(function(){location.href="/get/1"} , 1000);
                 }
             });
             return false;
@@ -181,6 +177,7 @@
                 alertify.success("Объявление успешно добавлено");
                 $("#create").trigger("reset");
                 $.fancybox.close();
+                getCountPages();
             });
             return false;
         });
@@ -199,7 +196,8 @@
                 contentType: false,
                 processData: false
             }).done(function(data) {
-                alertify.success("Объявление успешно изменено");
+                alertify.notify("Объявление успешно изменено",'success');
+                setTimeout(function(){location.href="/profile"} , 1000);
             });
             return false;
         });
